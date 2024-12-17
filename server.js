@@ -12,6 +12,10 @@ app.use(express.json());
 app.use("/", loginrouter);
 app.use("/admin", adminRouter); 
 app.use("/user",userRouter)
+
+app.get("/",(req,res)=>{
+  res.send("hello world!")
+})
 app.listen(process.env.PORT, () => {
   connectDb();
   console.log("listening to server");
